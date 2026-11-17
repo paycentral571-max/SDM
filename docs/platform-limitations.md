@@ -1,0 +1,9 @@
+# Platform capabilities and limitations
+
+The application may record events that the application itself sees, such as its own authentication failures, owner-submitted reports, and device diagnostics available through documented APIs. It cannot promise operating-system-wide sign-in detection on a personal Android or iPhone without an appropriate managed-device integration.
+
+Camera testing requires a visible user action and the OS permission dialog. Media evidence is limited to files the owner selects in a system picker. Location sharing requires a separate explanation, OS approval, a visible active state, and an in-app revocation control. Neither platform permits arbitrary silent access to other applications' authentication events, gallery contents, microphone, or camera. Background behavior differs by OS and must be verified against current platform APIs before it is enabled.
+
+The mobile package now provides an Expo onboarding and device-owner UI, local diagnostics through Expo APIs, explicit permission prompts, invitation/QR handling, owner-submitted events, and selected-file upload flows. These flows call the API contract described in `api-documentation.md`; the NestJS modules remain empty scaffolds, so authenticated account, registration, consent, upload, and synchronization actions cannot complete until their server routes are implemented.
+
+The app requests camera permission only for an explicitly started QR scanner or visible camera preview. Location is foreground-only and requested from the one-time share action. Photos and documents are selected through system pickers. Notifications require an explicit OS prompt. Account deletion, disconnect, token refresh, and evidence upload are wired to server calls but are not end-to-end verified because those routes are not implemented. Platform simulator/device behavior has not been tested yet.

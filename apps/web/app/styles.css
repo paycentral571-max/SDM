@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root { color-scheme: dark; }
+body { @apply bg-ink text-slate-100 antialiased; }
+button, input, select { font: inherit; }
+button, a, input, select { @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent; }
+.surface { @apply rounded-2xl border border-line bg-panel shadow-[0_12px_40px_rgba(0,0,0,.12)]; }
+.field { @apply rounded-xl border border-line bg-ink/60 px-3 py-2.5 text-sm text-slate-100 placeholder:text-muted focus:border-accent focus:outline-none; }
+.button { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-ink hover:bg-blue-300 disabled:cursor-not-allowed disabled:opacity-50; }
+.button-ghost { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-line bg-panel2 px-4 py-2.5 text-sm font-medium text-slate-200 hover:border-accent/50 hover:text-white; }
+.eyebrow { @apply text-[11px] font-bold uppercase tracking-[.18em] text-accent; }
+.muted { @apply text-sm text-muted; }
+.badge { @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold; }
+.badge-good { @apply border-emerald-400/20 bg-emerald-400/10 text-emerald-300; }
+.badge-warn { @apply border-amber-400/20 bg-amber-400/10 text-amber-300; }
+.badge-bad { @apply border-rose-400/20 bg-rose-400/10 text-rose-300; }
+.badge-neutral { @apply border-slate-400/20 bg-slate-400/10 text-slate-300; }

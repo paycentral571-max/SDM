@@ -1,0 +1,12 @@
+{
+  "name": "secure-device-monitor",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev:web": "next dev apps/web",
+    "build:web": "next build apps/web",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": { "typescript": "^5.7.2", "prettier": "^3.4.2" }
+}
